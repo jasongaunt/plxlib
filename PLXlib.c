@@ -113,6 +113,32 @@ char PLX_Decode_iMFD(int sensor, int units, int value, double *result) {
         case PLX_UNITS_DUTY_CYCLE_POSITIVE: *result = value / 10.23;        return 1; break;
         case PLX_UNITS_DUTY_CYCLE_NEGATIVE: *result = 100 - (value / 10.23); return 1; break;
       }; break;
+    case PLX_SENSOR_FUEL_EFFICIENCY:
+      switch (units) {
+        case PLX_UNITS_FUEL_EFFICIENCY_MPG: *result = value; return 1; break;
+        case PLX_UNITS_FUEL_EFFICIENCY_KM_L: *result = value * 0.4251; return 1; break;
+        case PLX_UNITS_FUEL_EFFICIENCY_L_100KM: *result = 2.35215 / value; return 1; break;
+      }; break;
+    case PLX_SENSOR_ANALOG_VOLTAGE:
+      switch (units) {
+        case PLX_UNITS_VOLTAGE: *result = value / 204.6; return 1; break;
+      }; break;
+    case PLX_SENSOR_SPEED_HERTZ:
+      switch (units) {
+        case PLX_UNITS_SPEED_HERTZ: *result = value; return 1; break;
+      }; break;
+    case PLX_SENSOR_WIDEBAND_STATUS:
+      switch (units) {
+        case PLX_UNITS_WIDEBAND_STATUS_HEATING_READY: *result = value; return 1; break;
+      }; break;
+    case PLX_SENSOR_WIDEBAND_HEALTH:
+      switch (units) {
+        case PLX_UNITS_WIDEBAND_HEALTH_PERCENT: *result = value; return 1; break;
+      }; break;
+    case PLX_SENSOR_WIDEBAND_REACTION:
+      switch (units) {
+        case PLX_UNITS_WIDEBAND_REACTION_MS: *result = value; return 1; break;
+      }; break;
   }
   return 0; // No valid combination of sensor vs units could be found
 }

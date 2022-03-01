@@ -37,7 +37,13 @@ enum PLX_SENSOR {
   PLX_SENSOR_FUEL_LEVEL,               // 17
   PLX_SENSOR_VOLT_METER,               // 18
   PLX_SENSOR_KNOCK,                    // 19
-  PLX_SENSOR_DUTY_CYCLE                // 20
+  PLX_SENSOR_DUTY_CYCLE,               // 20
+  PLX_SENSOR_FUEL_EFFICIENCY,          // 21
+  PLX_SENSOR_ANALOG_VOLTAGE,           // 22
+  PLX_SENSOR_SPEED_HERTZ,              // 23
+  PLX_SENSOR_WIDEBAND_STATUS,          // 24
+  PLX_SENSOR_WIDEBAND_HEALTH,          // 25
+  PLX_SENSOR_WIDEBAND_REACTION         // 26
 };
 
 //// Units
@@ -165,6 +171,33 @@ enum PLX_UNITS_KNOCK {
 enum PLX_UNITS_DUTY_CYCLE {
   PLX_UNITS_DUTY_CYCLE_POSITIVE, // 0
   PLX_UNITS_DUTY_CYCLE_NEGATIVE  // 1
+};
+
+////// Fuel Efficiency - OBD
+enum PLX_UNITS_FUEL_EFFICIENCY {
+  PLX_UNITS_FUEL_EFFICIENCY_MPG,    // 0
+  PLX_UNITS_FUEL_EFFICIENCY_KM_L,   // 1
+  PLX_UNITS_FUEL_EFFICIENCY_L_100KM // 2
+};
+
+////// Speed (Hertz)
+enum PLX_UNITS_HERTZ {
+  PLX_UNITS_SPEED_HERTZ // 0
+};
+
+////// Wideband Status - SM-AFR
+enum PLX_UNITS_WIDEBAND_STATUS {
+  PLX_UNITS_WIDEBAND_STATUS_HEATING_READY // 0
+};
+
+////// Wideband Health - SM-AFR
+enum PLX_UNITS_WIDEBAND_HEALTH {
+  PLX_UNITS_WIDEBAND_HEALTH_PERCENT // 0
+};
+
+////// Wideband Reaction Time - SM-AFR
+enum PLX_UNITS_WIDEBAND_REACTION {
+  PLX_UNITS_WIDEBAND_REACTION_MS // 0
 };
 
 // Functions
